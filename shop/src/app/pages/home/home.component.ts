@@ -9,20 +9,29 @@ import { ShopService } from 'src/app/services/shop.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private shopSer:ShopService) { }
+  constructor(private shopSer: ShopService) { }
 
   ngOnInit(): void {
   }
-  onSumbit(data:Shop){
-    this.shopSer.addItems(data);
-    alert(`create : ${data.title}`)
+  onSumbit(data: Shop) {
+    if (data.title == "") {
+      alert("missing title")
+    } if (data.price == 0) {
+      alert("missing price")
+    } if (data.stock == 0) {
+      alert("missing stock")
+    } else {
+      this.shopSer.addItems(data);
+      alert(`create : ${data.title}`)
+    }
+
   }
 
 
-  check(){
+  check() {
     this.shopSer.getItemsData();
   }
-  open(){
+  open() {
     console.log("test");
   }
 }

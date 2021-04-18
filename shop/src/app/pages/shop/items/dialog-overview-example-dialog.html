@@ -46,8 +46,11 @@
 </style>
 
 <div class="popup">
+    <label>Title</label>
     <input class="title" matInput type="text" value="{{this.data.title}}" (keyup)="changeTitle(title.value)" #title><br>
+    <label>Price</label>
     <input class="title" matInput type="text" value="{{this.data.price}}" (keyup)="changePrice(price.value)" #price><br>
-    <input class="title" matInput type="text" value="{{this.data.stock}}" (keyup)="changeStock(stock.value)" #stock><br>
+    <label>Stock</label>
+    <input class="title" matInput type="number" value="{{this.data.stock}}" (keyup)="changeStock(stock.value)" #stock><br>
     <button class="luu" (click)='UpdateContent()'>Lưu</button>
 </div>
